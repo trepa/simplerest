@@ -25,7 +25,7 @@ abstract class Languages
 	const TR = 'tr';
 	const ZH = 'zh';
 
-	private static $_labels = array(
+	static $_labels = array(
 		self::AR => 'العربية',
 		self::EN => 'english',
 		self::EO => 'esperanto',
@@ -44,13 +44,7 @@ abstract class Languages
 		self::ZH => '中文'
 	);
 	
-	public static function getLabel($language)
-	{
-		return self::$_labels[$language];
-	}
+	static function getLabel($language){return self::$_labels[$language];}
 	
-	public static function isKnownLanguage($language)
-	{
-	    return array_key_exists($language, self::$_labels);
-	}
+	static function isKnownLanguage($language){ return array_key_exists($language, self::$_labels); }
 }
